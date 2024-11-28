@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="stylesheet" href="cssadmin.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Panel lateral -->
+        <nav class="sidebar">
+            <center>Administrador</center>
+            <ul>
+                <li><a href="Inicio.html" data-page="Inicio.html" id="inicio-link">Inicio</a></li>
+                <li><a id="inicio-link">Usuarios</a></li>
+                <li><a id="inicio-link">Opciones</a></li>
+                <li><a id="inicio-link">Cerrar Sesión</a></li>
+                
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <!-- Iframe para cargar el contenido -->
+            <iframe id="content-frame" src="" frameborder="0"></iframe>
+        </main>
+    </div>
+
+    <script>
+        // Script para manejar la carga dinámica del iframe
+        document.addEventListener('DOMContentLoaded', () => {
+            const inicioLink = document.getElementById('inicio-link');
+            const iframe = document.getElementById('content-frame');
+
+            inicioLink.addEventListener('click', (event) => {
+                event.preventDefault(); // Evitar comportamiento predeterminado
+                iframe.src = 'Inicio.html'; // Establecer la fuente del iframe
+            });
+        });
+    </script>
+</body>
+</html>
